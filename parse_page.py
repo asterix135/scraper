@@ -7,12 +7,6 @@ import bs4  # beautifulsoup4 - for parsing
 # from lxml import html  # option 2 for parsing
 
 
-def setup_crawl():
-    """
-    Initializes URL queue
-    """
-
-
 def fetch_page(url):
     """
     load web page and return as Beautiful Soup object
@@ -41,6 +35,17 @@ def extract_urls(soup_item, test_start = ''):
         if test_link is not None and test_link[:len(test_start)] == test_start:
             link_list.append(test_link)
     return link_list
+
+
+def append_to_url(url_list, start_string):
+    """
+    Takes a list of partial URLs and appends them to a constant start
+    returns list of new URLs
+    """
+    new_list = []
+    for url in url_list:
+        new_list.append(start_string + url)
+    return new_list
 
 
 def enqueue_urls(url_list, Queue):
