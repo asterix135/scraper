@@ -2,6 +2,7 @@
 Manage a Queue of URLs
 Also keep track of visited URLs
 """
+from collections import deque
 
 
 class URLSearchQueue:
@@ -15,7 +16,7 @@ class URLSearchQueue:
         sets up Queue object with empty queue
         and empty visited list
         """
-        self._search_queue = []
+        self._search_queue = deque()
         self._visited_list = set([])
 
     def __repr__(self):
@@ -52,8 +53,9 @@ class URLSearchQueue:
         if url is in visited list - pulls another one until queue is empty
         """
         if len(self._search_queue) > 0:
-            test_url = self._search_queue.pop(0)
+            test_url = self._search_queue.popleft()
             if not self.check_visited(test_url):
+                # self.add_to_visited(test_url)
                 return test_url
             else:
                 return self.dequeue()

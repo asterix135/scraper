@@ -3,6 +3,7 @@ Functions to parse web page
 """
 import requests  # for importing web pages
 import bs4  # beautifulsoup4 - for parsing
+from collections import deque
 # import lxml  # to support bs4 - not sure if needed
 # from lxml import html  # option 2 for parsing
 
