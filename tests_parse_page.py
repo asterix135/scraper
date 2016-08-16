@@ -12,7 +12,7 @@ def test1():
     """
     page1 = parse_page.fetch_page(TEST_SINGLE)
     if page1:
-        print('test 1 success\m')
+        print('test 1 success\n')
         return page1
     else:
         print('test 1 failure\n')

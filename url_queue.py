@@ -38,10 +38,18 @@ class URLSearchQueue:
         """
         return url in self._visited_list
 
+    def url_in_queue(self, url):
+        """
+        Checks if supplied URL is already in queue
+        return Boolean
+        """
+        return url in self.search_queue
+
     def enqueue(self, url):
         """
         enqueues supplied url
         checks to make sure not visited
+        checks to make sure not in current queue
         """
         if not self.check_visited(url):
             self._search_queue.append(url)

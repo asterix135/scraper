@@ -6,6 +6,7 @@ import url_queue
 TESTURL1 = 'http://www.google.ca'
 TESTURL2 = 'http://www.google.com'
 TESTURL3 = 'http://www.google.ca/'
+TESTURL4 = 'http://www.google.ca'
 
 
 def test1():
@@ -28,6 +29,7 @@ def test2(urlqueue):
     urlqueue.enqueue(TESTURL1)
     urlqueue.enqueue(TESTURL2)
     urlqueue.enqueue(TESTURL3)
+    urlqueue.enqueue(TESTURL4)
     print('\ntest2:')
     print(str(urlqueue))
 
